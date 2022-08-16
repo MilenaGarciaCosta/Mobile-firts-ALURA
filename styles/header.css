@@ -1,0 +1,141 @@
+.cabeçalho__menu-hamburguer{
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block; /* permite ajustar altura e largura*/
+}
+
+.cabeçalho{
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* libera o absolute para ser modificado em relação a ele */
+}
+
+.container{
+    display:flex ;
+    align-items: center;
+}
+
+.container__img{
+    padding: 1em;
+}
+
+.lista-menu{
+    display: none;
+    position: absolute;
+    top: 100%; /* fica totalmente a baixo do cabeçalho */
+    width: 60vw;
+}
+
+.container__botao:checked ~ .lista-menu{ /* detecta se tá checado e o '~' ele procura outro q venha dps dele e transforma para tais ajustes */
+    display: block;
+}
+
+.lista-menu__titulo, .lista-menu__item{
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu__titulo{
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link{
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+.container__botao{
+    display: none;
+}
+
+.container__titulo{
+    display: none;
+}
+
+.opções{
+    display: none;
+}
+
+.container__texto{
+    display: none;
+}
+
+@media screen and (min-width: 1024px){
+
+    .container__titulo, .container__titulo-negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .container__titulo{
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__titulo-negrito{
+        font-weight: 700;
+    }
+
+    .opções{
+        display: flex;
+        align-items: center;
+    }
+
+    .opções__item{
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    .opções__link{
+        text-decoration: none;
+        color: black;
+    }
+
+    .container__favorito{
+        display: none;
+    }
+
+    .cabeçalho__menu-hamburguer{
+        display: none;
+    }
+
+    .opções__botao:checked~ .lista-menu{
+        display: block;
+        width: auto;
+    }
+
+    .opções__botao{
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 1728px){
+    .container__link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-size: 20px;
+        color: black;
+    }
+
+    .cabeçalho{
+        margin: 0 2em;
+    }
+
+    .opções{
+        margin-right: auto; /* preenche todo o espaço */
+    }
+
+    .container__texto{
+        display: block;
+    }
+}
